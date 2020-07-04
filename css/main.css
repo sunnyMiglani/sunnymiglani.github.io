@@ -1,6 +1,10 @@
 body {
-  margin: 60px auto;
-  width: 70%;
+  margin:40px
+  auto;max-width:650px;
+  line-height:1.6;
+  font-size:18px;
+  color:#444;
+  padding:010px
 }
 nav ul,
 footer ul {
@@ -25,8 +29,12 @@ h1 {
   font-size: 3em;
   font-family: "Helvetica", "Arial", "Sans-Serif";
 }
+h1,h2,h3{
+  line-height:1.2
+}
+
 p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.4em;
   color: #333;
 }
@@ -42,4 +50,22 @@ ul.posts {
 
 ul.posts li {
   list-style: none;
+}
+
+.insta{
+  display: block;
+  float: left;
+  height: 128px;
+  width: 128px;
+  padding: 2%;
+  background: url(/images/instagramIcon.png) no-repeat 0px 0px; 
+}
+
+.linkedin{
+  float: left;
+  display: block;
+  height: 128px;
+  width: 128px;
+  padding: 2%;
+  background: url(/images/linkedInIcon.png) no-repeat 0px 0px; 
 }
