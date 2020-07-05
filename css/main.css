@@ -52,21 +52,20 @@ ul.posts li {
   list-style: none;
 }
 
-.insta{
+.icon{
   display: block;
   float: left;
   height: 128px;
   width: 128px;
   padding: 2%;
+}
+.insta{ 
   background: url(/images/instagramIcon.png) no-repeat 0px 0px; 
 }
-
 .linkedin{
-  float: left;
-  display: block;
-  height: 128px;
-  width: 128px;
-  padding: 2%;
   background: url(/images/linkedInIcon.png) no-repeat 0px 0px; 
+}
+.github{
+  background: url(/images/github.png) no-repeat 0px 0px;
 }
 
