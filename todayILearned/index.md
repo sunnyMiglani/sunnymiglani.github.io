@@ -69,7 +69,7 @@ Awesome, but what if you wanna run just one test?
 
 That requires `go test run=^TestRunThisTest$ ../myCurrentFolder `
 
-That just makes me go ("Wat")[https://www.destroyallsoftware.com/talks/wat]
+That just makes me go ["Wat"](https://www.destroyallsoftware.com/talks/wat)
 
 The `run` argument there is actually Regex that is writing the name of the test *case*. 
 The `../myCurrentFolder` is the, well name of the current folder. But you need to provide a path
