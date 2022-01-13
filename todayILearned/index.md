@@ -14,7 +14,7 @@ Note: There are probably a few obvious things in here. But to that I say - https
 
 ## January
 
-13th Jan, 2021:
+### 13th Jan, 2021:
 
 Golang is honestly a weird language. It's smart in terms of "ease of use" (looking at you `go fmt`)
 But the issue with ease of use is complication when you face a bug but there's only limited things you can do.
@@ -84,7 +84,7 @@ But anyway, if you fill all the qualifications golang asks for, sacrifice a lamb
 
 Then you might finally get golang's "ease of use"
 
-12th Jan, 2021:
+### 12th Jan, 2021:
 
 
 You can do PUT requests to Artifactory using cURL doing something like:
@@ -97,7 +97,7 @@ Ensure you run coverage tests in your code often, because as code changes, if te
 Miss out on testing either complete features or core debugging/error handling scenarios.
 
 
-11th Jan, 2021:
+### 11th Jan, 2021:
 
 How exceptions work in Stream operations
 <p>
