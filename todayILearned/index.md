@@ -14,11 +14,24 @@ Note: There are probably a few obvious things in here. But to that I say - https
 
 ## January
 
+12th Jan, 2021:
+
+
+You can do PUT requests to Artifactory using cURL doing something like:
+```
+curl -v -u some_username:"some password" -T someFile.ext "http://Artifactory.path.to.server/repository/someFile.ext"
+```
+
+Also, second thing I learned:
+Ensure you run coverage tests in your code often, because as code changes, if tests are not updated to match, you will definitely
+Miss out on testing either complete features or core debugging/error handling scenarios.
+
+
 11th Jan, 2021:
 
 How exceptions work in Stream operations
 <p>
-If you've got a Java (1.8 ofc) "Stream" object that's being iterated upon via the `forEach` calls,
+If you've got a Java "Stream" object that's being iterated upon via the `forEach` calls,
 an exception in the loop will end the execution for all following iterations rather than just one iteration. 
 The preferred way handling an error case in this scenario is using `return` after logging.
 
