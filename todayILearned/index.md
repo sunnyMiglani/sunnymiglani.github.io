@@ -67,7 +67,10 @@ Anyway, once you get past all this, you'll see that running `go run` will actual
 
 Awesome, but what if you wanna run just one test?
 
-That requires `go test run=^TestRunThisTest$ ../myCurrentFolder `
+That requires 
+```
+go test run=^TestRunThisTest$ ../myCurrentFolder
+```
 
 That just makes me go ["Wat"](https://www.destroyallsoftware.com/talks/wat)
 
