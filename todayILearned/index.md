@@ -8,15 +8,41 @@ It's not a pretty page right now, but hopefully I'll learn what it takes to make
 
 Note: There are probably a few obvious things in here. But to that I say - https://xkcd.com/1053/
 
-
-# Things I Learned
-
-
 ## January
 
 
-### 14th Jan, 2021:
 
+### 15th Jan, 2021: (Heirar-key)
+
+Okay so today was not very techy until the evening. So here's a short and simple one:
+I learned today what a key heirarchy (heirar-key!!) with a master and set of data key is.
+
+This is a system used by a bunch of companies to handle key management and allow for easier and 
+more secure key usage.
+
+The idea is to have two types of keys, a "master" key and a set of "data" keys.
+
+Master keys are usually related to Hardware Security Modules (HSMs) whereas data keys could be simple AES/RSA keys used 
+for normal data encryption. The important thing about HSMs/master key is that it is itself encrypted, and is only used to encrypt and decrypt
+other keys. The actual encryption and decryption is done on a separate hardware device (hence _hardware_ security module) and therefore they master key
+is never exported from this piece of hardware, and therefore never stored in plaintext.
+
+Data keys are cryptographically secure keys that are used to encrypt/decrypt your data. However, these keys are themselves encrypted/decrypted by the master key.
+This is helpful because you can focus most of your security efforts on protecting the master key, and even leave encrypted versions of your data keys next to the data
+it encrypts!
+
+Since the master keys (HSMs) encrypt and decrypt on their own hardware device, you need to send your _encrypted_ data key to your HSM,
+which will decrypt this key (without revealing the master key) and send it back to you. You can use this as a one-off key to decrypt /encrypt your data
+Once your actions are done, you may delete the decrypted data key (but obviously not the encrypted data key) and you won't lose your data!
+
+Since you can create as many data keys as you'd like, you can segment your data better and still keep it equally (if not more) secure.
+
+This is a really neat system. I'm not sure if it's harder or easier to maintain, since it'd depend on how often you need to decrypt/encrypt your keys
+. And does also bring up the question of how to decrypt your data if your HSM is ever unavailable/compromised. 
+
+
+
+### 14th Jan, 2021: (curling up with GRPC)
 To be honest, today has been mostly focused on stuff from yesterday, so there's not too much to say.
 The only thing I learned, is fun grpc stuff, specifically `grpcurl` and how nice it is to access any endpoints.
 
@@ -45,7 +71,7 @@ Back out to commandline and then resolve the grpcurl bit. That's pretty smart tb
 
 
 
-### 13th Jan, 2021:
+### 13th Jan, 2021: (Go is really testing me)
 
 Golang is honestly a weird language. It's smart in terms of "ease of use" (looking at you `go fmt`)
 But the issue with ease of use is complication when you face a bug but there's only limited things you can do.
@@ -115,7 +141,7 @@ But anyway, if you fill all the qualifications golang asks for, sacrifice a lamb
 
 Then you might finally get golang's "ease of use"
 
-### 12th Jan, 2021:
+### 12th Jan, 2021: (put artifactory UI away!)
 
 
 You can do PUT requests to Artifactory using cURL doing something like:
@@ -128,7 +154,7 @@ Ensure you run coverage tests in your code often, because as code changes, if te
 Miss out on testing either complete features or core debugging/error handling scenarios.
 
 
-### 11th Jan, 2021:
+### 11th Jan, 2021: (Exceptional first post!)
 
 How exceptions work in Stream operations
 <p>
