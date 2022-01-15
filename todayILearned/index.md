@@ -14,6 +14,37 @@ Note: There are probably a few obvious things in here. But to that I say - https
 
 ## January
 
+
+### 14th Jan, 2021:
+
+To be honest, today has been mostly focused on stuff from yesterday, so there's not too much to say.
+The only thing I learned, is fun grpc stuff, specifically `grpcurl` and how nice it is to access any endpoints.
+
+There's the idea of being able to make grpc endpoints discoverable. This is done through "server reflection", which is basically 
+just the gRPC endpoint opening up ports to allow command line tools to access the specific grpc methods without having access to the exact protobuf structure
+
+It's helpful if you're trying to debug things, but definitely not something you put into production.
+
+[gRPCurl](https://github.com/fullstorydev/grpcurl) though, lets you use existing protobuf definition files rather than
+solely relying on servers with reflection on. 
+
+An odd thing that I "learned" about grpcurl, you can't provide it a file for data like you can with `cURL`.
+With `cURL` you can point to a file with this syntax : `curl -d "pathToFolder/file"` and you don't need to put long json strings into your command line
+
+`gRPCurl` doesn't behave the same way. The `-d` flag requires you to use raw data. 
+
+The hack for that though, is to use the following syntax:
+```
+grpcurl -d "`cat pathToFolder/file.json`" ....
+
+```
+
+Here, we're actually being super cheeky and using inline commandline resolution of `cat pathToFolder/file.json` to print the data
+Back out to commandline and then resolve the grpcurl bit. That's pretty smart tbh
+
+
+
+
 ### 13th Jan, 2021:
 
 Golang is honestly a weird language. It's smart in terms of "ease of use" (looking at you `go fmt`)
